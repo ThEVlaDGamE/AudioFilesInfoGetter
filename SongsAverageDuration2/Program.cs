@@ -15,6 +15,11 @@ namespace Application
 
         static void Main(string[] args)
         {
+            if (System.IO.File.Exists("path.txt"))
+            {
+                audioPath = System.IO.File.ReadAllText("path.txt");
+            }
+
             // Получение всех файлов с указанным расширением по указанному пути, включая подкаталоги (последний аргумент)
             fullfilesPath = Directory.GetFiles(audioPath, searchingPattern, SearchOption.AllDirectories);
 
